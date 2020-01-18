@@ -1,3 +1,6 @@
+'''
+This file will cluster the data. This will give the bigger clusters.
+'''
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.ml.feature import VectorAssembler

@@ -1,3 +1,6 @@
+'''
+This will give the array containing K from 2-9 and WSSSE values for each respective K.
+'''
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark.ml.feature import VectorAssembler
@@ -25,17 +28,9 @@ def getK(dataset):
 		kmeans = KMeans().setK(k).setSeed(1)
 		model = kmeans.fit(dataset)
 		wssse = model.computeCost(dataset)
-		'''
-		#Make Predictions
-		predictions = model.transform(dataset)
-
-		#Evaluate clustering by computing Silhouette score
-		evaluator = ClusteringEvaluator()
-
-		silhouette = evaluator.evaluate(predictions)'''
 		K.append(k)
 		WSSSE.append(wssse)
 	return K,WSSSE
 
 K,WSSSE = getK(dataset)
-print("Result is: ",K,WSSSE)
+print("ASHISH -> Result is: ",K,WSSSE)
