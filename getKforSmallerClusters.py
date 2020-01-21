@@ -1,6 +1,5 @@
 '''
-This file returns the arrray with K values and for each K value respective WSSSE values.
-This is done for each big cluster.
+This file will give the array containing K from 2-9 and WSSSE values for each respective K for CLUSTERS already formed
 '''
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
